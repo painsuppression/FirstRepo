@@ -1,0 +1,18 @@
+let BS = (inputArr) => {
+    let checked;
+    do {
+        checked = false;
+        for (let i = 0; i < inputArr.length; i++) {
+            if (inputArr[i] > inputArr[i + 1]) {
+                let tmp = inputArr[i];
+                inputArr[i] = inputArr[i + 1];
+                inputArr[i + 1] = tmp;
+                checked = true;
+            }
+        }
+    } while (checked);
+    return inputArr;
+};
+const testArr = [1,45,2,5,342,5,21,89,4,8,356,1,2,0];
+let sortedArr = BS(testArr);
+console.log(sortedArr);
